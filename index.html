@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toy Drone Simulation App</title>
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/drone.js"></script>
+</head>
+<body>
+    <div class="container">
+        <br>
+        <h1  id="game-heading" class="mt-auto"><span class="inner-heading">Toy Drone App</span></h1>
+        <div class="row g-0 mt-4">
+            <div class="col-md-6">
+                <div class="d-flex justify-content-center align-item-center">
+                    <div id="surface" class="bg-grey">
+                        <canvas id="surfaceCanvas" width="350" height="350"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="d-flex justify-content-center align-item-center flex-column">
+                    <button class="btn btn-warning drone-control-btn" data-bs-toggle="modal" data-bs-target="#placeModal">PLACE</button><br/>
+                    <button id="moveBtn" class="btn btn-warning drone-control-btn">MOVE</button><br/>
+                    <button class="btn btn-warning drone-control-btn">LEFT</button><br/>
+                    <button class="btn btn-warning drone-control-btn">RIGHT</button><br/>
+                    <button class="btn btn-warning drone-control-btn">ATTACK</button><br/>
+                    <button class="btn btn-warning drone-control-btn">REPORT</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Place modal -->
+<div class="modal" id="placeModal" tabindex="-1" aria-labelledby="placeModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="placeModalLabel">Place the drone</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Please enter x,y and direction</p>
+              <form id="placeForm">
+                <div class="form-group row">
+                  <label for="inputX" class="col-sm-2 col-form-label">X</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" name="inputX" placeholder="0">
+                  </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputY" class="col-sm-2 col-form-label">Y</label>
+                    <div class="col-sm-10 mt-2">
+                      <input type="text" class="form-control" name="inputY" placeholder="0">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputX" class="col-sm-2 col-form-label">Direction</label>
+                    <div class="col-sm-10 mt-2">
+                      <input type="text" class="form-control" name="inputDirection" placeholder="0">
+                    </div>
+                </div>
+            </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button id="placementSaveBtn" type="button" class="btn btn-warning">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="js/main.js"></script>
+<footer class="footer text-center">
+    <p class="tex-muted inner-heading">Developed By Zweli Mthethwa</p>
+</footer>
+</body>
+</html>
