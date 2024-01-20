@@ -83,7 +83,7 @@ The installation differs from one operating system to the other, but the documen
 
 Serve is a small, robust tool from the creators of Next.js and is a Node.js package that can be used to serve a static site, a single-page web app, or a static file. It's great for running production builds locally before deploying them, and it's also handy for sharing progress with clients, and teammates, or just testing on different devices on the same network.
 
-`npm install -g serve`
+```npm install -g serve```
 
 #### 3. Text Editor
 Any text editor of your choice can be used. However Visual Studio Code and Atom are highly recommended.
