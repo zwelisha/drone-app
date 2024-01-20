@@ -64,14 +64,10 @@ REPORT Output: 3,3,NORTH
 
 ### Requirements
 
-1. Python3
-2. Pip3
+1. node
+2. serve
 3. Text editor (Recommended: VSCode or SublimeText or Atom)
-4. Black
-5. unittest
-6. pillow
-7. Tkinter
-
+4. Prettier
 
 ### Installation
 
