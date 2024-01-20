@@ -134,8 +134,7 @@ serve
 ```
 then copy the localhost url and open it on your browser
 
-```
-Have fun!
+Have fun
 
 #### Authors
 
