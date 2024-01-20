@@ -28,6 +28,7 @@ $(document).ready(function() {
         drone.set('x',parseInt(x));
         drone.set('y',parseInt(y))
         drone.set('f',direction);
+        drone.place()
         console.log(drone);
         alert("Drone placed successfully");
         $('#placeModal').modal('hide');

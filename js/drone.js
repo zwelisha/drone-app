@@ -1,4 +1,9 @@
 class Drone {
+    /**
+     * @param {number} x - the x position of the drone
+     * @param {number} y - the y position of the drone
+     * @param {string} f - the direction of the drone, it can NORTH, WEST, EAST or SOUTH
+     */
     constructor() {
       this.x = null;
       this.y = null;
@@ -13,6 +18,12 @@ class Drone {
       return this[name];
     }
 
+    /**
+     * Places the drone on the surface
+     * @param {number} x - the x position where the drone should be placed
+     * @param {number} y - the y position where the drone should be placed
+     * @param {string} f - the facing direction of the drone. it can be NORTH, SOUTH, WEST or EAST
+     */
     place(x, y, f) {
       if (this.isInSurfaceBoundary(x, y)) {
         this.x = x;
@@ -20,7 +31,12 @@ class Drone {
         this.f = f.toUpperCase();
       }
     }
-  
+    /**
+     * moves the toy drone one unit forward in the direction it is currently facing.
+     * For example, if the drone is facing NORTH, this functin moves it 1 unit up
+     * along the y-axis. In addition the move only happens if the drone won't cross the 
+     * surface boundary.
+     */
     move() {
       if (this.f === 'NORTH' && this.isInSurfaceBoundary(this.x, this.y + 1)) {
         this.y++;
@@ -40,7 +56,11 @@ class Drone {
     right() {
       this.turn(90);
     }
-  
+    
+    /**
+     * Fires a projectile 2 units ahead of the current position. 
+     * Explode functionality still needs to be implemented.
+     */
     attack() {
       let projectileX, projectileY;
       switch (this.f) {
@@ -70,17 +90,31 @@ class Drone {
         alert("Could not fire projectile, reached surface boundary!")
       }
     }
-  
+    
+    /**
+     * Returns a clean string with all the special characters replaced by an empty string.
+     * @returns {string} string outputReport -  a string representation of the current position and direction.
+     */
     report() {
-      console.log(`Output: ${this.x},${this.y},${this.f}`);
+      const outputReport = `Output: ${this.x},${this.y},${this.f}`;
+      return outputReport;
     }
   
+    /**
+   * Turns the drone by a given angle in degrees.
+   * @param {number} degrees - the angle to rotate the drone by.
+   */
     turn(degrees) {
       const faceDirection = ['NORTH', 'EAST', 'SOUTH', 'WEST'];
       const currentFaceIndex = faceDirection.indexOf(this.f);
       const newFaceIndex = (currentFaceIndex + degrees / 90 + 4) % 4;
       this.f = faceDirection[newFaceIndex];
     }
+
+    /**
+     * Based on the current drone direction get the angle to rotate the drone.
+     * @returns {number} - the angle in degrees to rotate the drone by.
+     */
     getRotationAngle() {
       switch (this.f.toUpperCase()) {
         case 'SOUTH':
@@ -95,7 +129,13 @@ class Drone {
           return 0;
       }
     }
-  
+    
+    /**
+     * Checks if the drone is within the surface boundary.
+     * @param {number} x - the x position of the drone
+     * @param {number} y - the y position of the drone
+     * @returns {boolean} - true or false
+     */
     isInSurfaceBoundary(x, y) {
       return x >= 0 && x < 10 && y >= 0 && y < 10;
     }
