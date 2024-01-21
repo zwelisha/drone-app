@@ -6,7 +6,7 @@ $(document).ready(function() {
 
     // Load the sprite image
     const spriteImage = new Image();
-    spriteImage.src = 'public/images/drone-sprite.png'; // Replace 'sprite.png' with your image file
+    spriteImage.src = 'public/images/drone-sprite.png'; 
 
     const spriteWidth = 100;
     const spriteHeight = 100;
@@ -36,7 +36,8 @@ $(document).ready(function() {
         
     });
     
-    $('#moveBtn').click(function(){
+    $('#moveBtn').on('click', function(e){
+        e.preventDefault();
         alert("Now executing move button");
         if (drone.get('x') != null  && drone.get('y') != null && drone.get('f') != null){
             alert("Now moving");

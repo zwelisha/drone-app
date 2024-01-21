@@ -85,9 +85,9 @@ class Drone {
       }
       
       if (this.isInSurfaceBoundary(projectileX, projectileY)) {
-        alert("projectile fired")
+        console.log("projectile fired")
       } else {
-        alert("Could not fire projectile, reached surface boundary!")
+        console.log(("Could not fire projectile, reached surface boundary!"));
       }
     }
     
@@ -149,12 +149,12 @@ class Drone {
   // drone.left();
   // drone.left();
   // drone.attack();
-  // drone.report(); // Output: 0,1,SOUTH
+  // console.log(drone.report()); // Output: 0,1,SOUTH
 
   // console.log("********Test2*********")
   // drone.place(0,0,'NORTH');
   // drone.left()
-  // drone.report(); // Output: 0,0,WEST
+  // console.log(drone.report()); // Output: 0,0,WEST
 
   // console.log("********Test3*********")
   // drone.place(1,2,'EAST');
@@ -163,6 +163,6 @@ class Drone {
   // drone.left();
   // drone.move();
   // drone.attack();
-  // drone.report(); // Output: 3,3,NORTH
+  // console.log(drone.report()); // Output: 3,3,NORTH
   
   
