@@ -68,7 +68,7 @@ REPORT Output: 3,3,NORTH
 2. serve
 3. Text editor (Recommended: VSCode or SublimeText or Atom)
 4. Prettier
-
+5. Jest (for tests)
 ### Installation
 
 #### 1. NodeJs
@@ -85,9 +85,11 @@ Serve is a small, robust tool from the creators of Next.js and is a Node.js pack
 Any text editor of your choice can be used. However Visual Studio Code and Atom are highly recommended.
 
 #### 4. Prettier
+The installation documentation for Jest can be found [here](https://jestjs.io/docs/getting-started) 
+You can also install Jest by running ```npm install --save-dev jest```
+
+#### 5. Jest
 The installation documentation for Prettier can be found [here](https://prettier.io/) have clear instructions for each text editor.
-
-
 #### Folder Structure
 
 There are three folders in drone-app. js, css and public. Then there are three files, gitignore, readme and index
@@ -104,8 +106,12 @@ drone-app
         main.js
     public
         images
+    tests
+        drone.test.js
     .gitignore
     index.html
+    package-lock.js
+    package.json
     README.md
 ```
 
@@ -133,6 +139,9 @@ Then to run this game run the following command
 serve
 ```
 then copy the localhost url and open it on your browser
+
+### Testing the code 
+Run this command ```npm test```
 
 Have fun
 

@@ -10,8 +10,8 @@ class Drone {
       this.f = null;
     }
 
-    set(name,n){
-      this[name] = n
+    set(name,val){
+      this[name] = val
     }
     
     get(name) {
