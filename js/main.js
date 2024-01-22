@@ -1,5 +1,9 @@
+
 var drone = new Drone();
 $(document).ready(function() {
+    function isPlaced(drone){
+        return drone.get('x') != null  && drone.get('y') != null && drone.get('f') != null;
+    }
     // Get the canvas element and its context
     const canvas = document.getElementById('surfaceCanvas');
     const ctx = canvas.getContext('2d');
@@ -38,15 +42,49 @@ $(document).ready(function() {
     
     $('#moveBtn').on('click', function(e){
         e.preventDefault();
-        if (drone.get('x') != null  && drone.get('y') != null && drone.get('f') != null){
+        if (isPlaced(drone)){
             alert(`Drone moved by 1 unit towards ${drone.get('f')}`);
             drone.move();
             console.log(drone);
         }
         else {
-            alert('Error invlid command, the drone has not been placed!');
+            alert('Error invalid command, the drone has not been placed!');
         }
     }); 
+
+    $('#leftBtn').on('click', function(e){
+        e.preventDefault();
+        if (isPlaced(drone)){
+            const oldDirection = drone.get('f');
+            drone.left();
+            alert(`Drone rotated from ${oldDirection} to ${drone.get('f')}`);
+            console.log(drone);
+        }
+        else {
+            alert('Error invalid command, the drone has not been placed!');
+        }
+    });
+    $('#rightBtn').on('click', function(e){
+        e.preventDefault();
+        if (isPlaced(drone)){
+            const oldDirection = drone.get('f');
+            drone.right();
+            alert(`Drone rotated from ${oldDirection} to ${drone.get('f')}`);
+            console.log(drone);
+        }
+        else {
+            alert('Error invalid command, the drone has not been placed!');
+        }
+    });
+    $('#reportBtn').on('click', function(e) {
+        e.preventDefault();
+        if(isPlaced(drone)){
+            alert(drone.report());
+        }
+        else {
+            alert('Error invalid command, the drone has not been placed!');
+        }
+    });
 });
 
        
