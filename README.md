@@ -85,11 +85,12 @@ Serve is a small, robust tool from the creators of Next.js and is a Node.js pack
 Any text editor of your choice can be used. However Visual Studio Code and Atom are highly recommended.
 
 #### 4. Prettier
+The installation documentation for Prettier can be found [here](https://prettier.io/) have clear instructions for each text editor.
+
+#### 5. Jest
 The installation documentation for Jest can be found [here](https://jestjs.io/docs/getting-started) 
 You can also install Jest by running ```npm install --save-dev jest```
 
-#### 5. Jest
-The installation documentation for Prettier can be found [here](https://prettier.io/) have clear instructions for each text editor.
 #### Folder Structure
 
 There are three folders in drone-app. js, css and public. Then there are three files, gitignore, readme and index

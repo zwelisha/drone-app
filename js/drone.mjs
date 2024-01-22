@@ -141,6 +141,7 @@ class Drone {
     }
   }
 
+
   // Tests
   // const drone = new Drone();
   // console.log("********Test1*********")

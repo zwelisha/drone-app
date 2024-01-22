@@ -37,7 +37,7 @@ $(document).ready(function() {
     });
     
     $('#moveBtn').on('click', function(e){
-        e.preventDefault();
+        e.preventDefault()
         alert("Now executing move button");
         if (drone.get('x') != null  && drone.get('y') != null && drone.get('f') != null){
             alert("Now moving");
