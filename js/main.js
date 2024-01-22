@@ -27,7 +27,7 @@ $(document).ready(function() {
         const direction = formData.get('inputDirection');
         drone.set('x',parseInt(x));
         drone.set('y',parseInt(y))
-        drone.set('f',direction);
+        drone.set('f',direction.toUpperCase());
         drone.place()
         console.log(drone);
         alert("Drone placed successfully");
@@ -37,11 +37,14 @@ $(document).ready(function() {
     });
     
     $('#moveBtn').on('click', function(e){
-        e.preventDefault()
-        alert("Now executing move button");
+        e.preventDefault();
         if (drone.get('x') != null  && drone.get('y') != null && drone.get('f') != null){
-            alert("Now moving");
+            alert(`Drone moved by 1 unit towards ${drone.get('f')}`);
             drone.move();
+            console.log(drone);
+        }
+        else {
+            alert('Error invlid command, the drone has not been placed!');
         }
     }); 
 });
